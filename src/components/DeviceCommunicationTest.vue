@@ -12,10 +12,10 @@
       <div class="bg-gray-50 p-3 rounded-lg">
         <h4 class="font-medium mb-2">设备基础信息</h4>
         <div class="text-sm space-y-1">
-          <p><strong>VID:</strong> {{ deviceInfo.vendorId?.toString(16).toUpperCase().padStart(4, '0') }}</p>
-          <p><strong>PID:</strong> {{ deviceInfo.productId?.toString(16).toUpperCase().padStart(4, '0') }}</p>
-          <p><strong>产品名称:</strong> {{ deviceInfo.productName }}</p>
-          <p><strong>制造商:</strong> {{ deviceInfo.manufacturerName || '未知' }}</p>
+          <p><strong>VID:</strong> {{ deviceInfo?.vendorId?.toString(16).toUpperCase().padStart(4, '0') || '未知' }}</p>
+          <p><strong>PID:</strong> {{ deviceInfo?.productId?.toString(16).toUpperCase().padStart(4, '0') || '未知' }}</p>
+          <p><strong>产品名称:</strong> {{ deviceInfo?.productName || '未知' }}</p>
+          <p><strong>制造商:</strong> {{ deviceInfo?.manufacturerName || '未知' }}</p>
         </div>
       </div>
 
@@ -174,7 +174,6 @@
               v-for="(response, index) in deviceResponses"
               :key="index"
               class="text-xs font-mono mb-1 leading-relaxed"
-              :ref="index === 0 ? 'latestResponse' : null"
             >
               <!-- 时间戳 -->
               <span v-if="showTimestamp" class="text-gray-500">[{{ response.timestamp }}] </span>

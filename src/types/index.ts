@@ -17,7 +17,7 @@ export interface HIDDeviceExtended {
 }
 
 export interface HIDInputReportEvent {
-  readonly device: HIDDevice
+  readonly device: any // 使用any避免HIDDevice类型问题
   readonly reportId: number
   readonly data: DataView
 }
