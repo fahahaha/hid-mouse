@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+:root {
+  --el-color-primary: #165DFF;
+  --el-color-success: #36D399;
+  --el-color-warning: #F59E0B;
+  --el-color-danger: #F87272;
+  --el-color-info: #3B82F6;
+}
+
+/* 基础样式 */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  @apply bg-gray-50;
+}
+
+/* 自定义组件样式 */
+.device-card {
+  @apply bg-white rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-lg;
+}
+
+.control-group {
+  @apply mb-6;
+}
+
+.control-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.status-indicator {
+  @apply w-3 h-3 rounded-full inline-block mr-2;
+}
+
+.macro-step {
+  @apply p-3 bg-gray-50 rounded border border-gray-200 mb-2 text-sm;
+}
+
+.rate-button {
+  @apply px-3 py-1 border rounded-md hover:bg-gray-50 transition-colors;
+}
+
+.rate-button.active {
+  @apply bg-primary text-white border-primary;
+}
+
+/* Element Plus 样式覆盖 */
+.el-button--primary {
+  --el-button-bg-color: var(--el-color-primary);
+  --el-button-border-color: var(--el-color-primary);
+  --el-button-hover-bg-color: var(--el-color-primary-light-3);
+  --el-button-hover-border-color: var(--el-color-primary-light-3);
+}
+
+.el-tabs__active-bar {
+  background-color: var(--el-color-primary);
+}
+
+.el-tabs__item.is-active {
+  color: var(--el-color-primary);
+}
+
+/* 动画效果 */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(22, 93, 255, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(22, 93, 255, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(22, 93, 255, 0);
+  }
+}
+
+.recording-indicator {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .device-card {
+    @apply p-4;
+  }
+
+  .control-group {
+    @apply mb-4;
+  }
+}

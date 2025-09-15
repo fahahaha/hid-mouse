@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run build:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
